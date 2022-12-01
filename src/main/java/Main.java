@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Main {
     public static void main (String[] args){
-
+        // 5 5 2 3 4 5 1
         // 4 3 2 4 3 2 0 0 0 4 0
         // a b d k r
         Scanner scanner = new Scanner(System.in);
@@ -25,8 +25,10 @@ public class Main {
 
         LinkedList<String> characters = new LinkedList<>(Arrays.asList(alphabet));
 
+       Integer number = scanner.nextInt();
+
         List<String> resultMtf = mtf(nums, characters);
-        List<String> resultBwt = bwt(resultMtf, 2);
+        List<String> resultBwt = bwt(resultMtf, number);
         System.out.println(resultBwt);
     }
 
@@ -47,8 +49,8 @@ public class Main {
         Collections.sort(sortList);
         List<Node> sortListFreq = addFreq(sortList);
         List<Node> listFreq = addFreq(characters);
-//        System.out.println(sortListFreq);
-//        System.out.println(listFreq);
+        System.out.println(sortListFreq);
+        System.out.println(listFreq);
         result.add(sortListFreq.get(number).character);
         int k = number;
         for (int j = 0; j < characters.size(); j++){
