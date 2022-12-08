@@ -20,6 +20,7 @@ public class Main {
         System.out.println();
 
         String[] alphabet = scanner.nextLine().split("");
+        Arrays.sort(alphabet);
         System.out.println(Arrays.toString(alphabet));
 
         LinkedList<String> characters = new LinkedList<>(Arrays.asList(alphabet));
