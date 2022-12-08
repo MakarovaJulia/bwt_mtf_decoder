@@ -2,7 +2,6 @@ import java.util.*;
 
 public class Main {
     public static void main (String[] args){
-        // 5 5 2 3 4 5 1
         // 4 3 2 4 3 2 0 0 0 4 0
         // a b d k r
         Scanner scanner = new Scanner(System.in);
@@ -11,7 +10,7 @@ public class Main {
         String[] str = scanner.nextLine().split(" ");
 
         for (String s : str) {
-            nums.add(Integer.parseInt(s));
+            nums.add(Integer.parseInt(s, 2));
         }
 
         for (Integer num : nums) {
@@ -20,7 +19,7 @@ public class Main {
 
         System.out.println();
 
-        String[] alphabet = scanner.nextLine().split(" ");
+        String[] alphabet = scanner.nextLine().split("");
         System.out.println(Arrays.toString(alphabet));
 
         LinkedList<String> characters = new LinkedList<>(Arrays.asList(alphabet));
@@ -63,6 +62,9 @@ public class Main {
                 if (result.size() == characters.size()){
                     break;
                 }
+            }
+            if (result.size() == characters.size()){
+                break;
             }
         }
         return result;
